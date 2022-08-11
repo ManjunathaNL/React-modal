@@ -1,22 +1,22 @@
 import React from "react";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
 const ItemModal = ({ item, show, onHide }) => {
   return (
     <>
       <Modal className="item" isOpen={show}>
-        <ModalHeader></ModalHeader>
-        <div className="close" title="Close" onClick={onHide}>
-          X
-        </div>
+        <ModalHeader>
+          <div  className="close" title="Close" onClick={onHide}>
+            X
+          </div>
+        </ModalHeader>
         <ModalBody>
           <div className="col-md-12" key={item.id}>
             <div className="card">
-              <div className="card-body">
+              <div className="card-body" style={{padding:0}} >
                 <div className="images">
                   <img
                     src={item.thumbnail.large}
-                    className="card-img-top"
+                    className="card-img-top "
                     alt="img"
                     width={700}
                     height={300}
@@ -33,10 +33,10 @@ const ItemModal = ({ item, show, onHide }) => {
                   <span>
                     <img
                       src={item?.author?.avatar}
-                      className="card-img-top"
-                      alt="img"
-                      width={30}
-                      height={30}
+                      className="card-img-top profile"
+                      alt={item.title}
+                      width={40}
+                      height={40}
                     />
                   </span>
                   <span className="author">
